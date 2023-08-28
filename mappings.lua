@@ -11,7 +11,9 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(
+          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        )
       end,
       desc = "Pick to close",
     },
@@ -24,5 +26,18 @@ return {
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
+  },
+  i = {
+    ["<C-f>"] = { "<Right>" },
+    ["<C-b>"] = { "<Left>" },
+    ["<C-p>"] = { "<Up>" },
+    ["<C-n>"] = { "<Down>" },
+    ["<ca-b>"] = { "<C-Left>" },
+    ["<ca-f>"] = { "<C-Right>" },
+    -- ["<C-e>"] = { "<cmd>ParinferOff<cr>+<Plug>(codeium-complete)+<cmd>ParinferOn<cr>" },
+    -- ["<leader>c"] = function()
+    --   vim.cmd "ParinferOff"
+    --   vim.cmd "<Plug>(codeium-complete)"
+    -- end,
   },
 }
